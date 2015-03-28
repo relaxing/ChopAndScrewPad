@@ -2,55 +2,58 @@
 <html>
 	<head>
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
-	<script type="text/javascript" src="http://cdn.tonejs.org/latest/Tone.min.js"></script>
-	<script type="text/javascript" src="http://rawgit.com/lsu-emdm/nexusUI/master/dist/nexusUI.js"></script>	
+		<script type="text/javascript" src="http://cdn.tonejs.org/latest/Tone.min.js"></script>
+		<script type="text/javascript" src="http://rawgit.com/lsu-emdm/nexusUI/master/dist/nexusUI.js"></script>	
 
-	<script src="../p5.min.js"></script>
-	<script src="class.js"></script>
-    <script src="sketch.js"></script>
-    <script src="index.js"></script>
+		<script src="index.js"></script>
 		<style>
 
-
-
-		html{
-
-		/* This image will be displayed fullscreen */
-		/*background: url('images/lissa.png') no-repeat center center;	*/
-		/* Ensure the html element always takes up the full height of the browser window */
-	    min-height:100%;
-	    /* The Magic */
-	    background-size:cover;
+		html {
+			min-height:100%;
+			background-size:cover;
 		}
 
-		body{
-
+		body {
 			background-color: #B1EED4;
-
-		/*workaround for some mobile browsers*/
-		background-size: cover;
+			/*workaround for some mobile browsers*/
+			background-size: cover;
 		}
 
 		.hide {
 			display: none;
 		}
 
-		.leftCanvas{
+		.leftCanvas {
 			padding: 0;
-			margin-left:calc(50% - 450px);
+			margin:auto;
+			display: block;
+			width:980px;
+		}
+
+		#crossfader {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		</style>
 	</head>
 	<body>
 
-		<canvas nx="vinyl" class="hide"></canvas>
 		<div class="leftCanvas">
-			<canvas nx="vinyl" height="450" width="450"></canvas>
-			<canvas nx="vinyl" height="450" width="450"></canvas>
+
+			<!-- tt1 -->
+			<canvas nx="slider" height="450" width="30" id="tt1Slider"></canvas>
+			<canvas nx="vinyl" height="450" width="450" id="vinyl1"></canvas>
+
+			<!-- tt2 -->
+			<canvas nx="vinyl" height="450" width="450" id="vinyl2"></canvas>
+			<canvas nx="slider" height="450" width="30" id="tt2Slider"></canvas>
 		</div>
-		<!-- <canvas nx="matrix" id="beatmatrix5"></canvas> -->
+
+		<!-- <div id="crossfader"> -->
+			<canvas nx="slider" id="crossfader" height="30" width="250"></canvas>
+
 	</body>
 </html>
 
