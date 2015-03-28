@@ -1,6 +1,8 @@
 /**
  *  Forking from Tommy Payne, hacking at the NYC Monthly Music Hackathon 3/28/2015
  *  Using Tone.JS and NexusUI
+ *
+ *  by Lee Tusman, Tim Bieniosek, Jason Sigal
  */
 
 		var loaded = 0;
