@@ -3,8 +3,6 @@
  *  Using Tone.JS and NexusUI
  */
 
-		Tone.Transport.start();
-
 		var loaded = 0;
 
 		// SETUP TONE
@@ -21,8 +19,6 @@
 			loaded++;
 			sampleLoaded();
 		});
-
-
 
 		function sampleLoaded(e){
 			if (loaded ===4){
