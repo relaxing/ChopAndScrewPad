@@ -22,6 +22,11 @@
 			sampleLoaded();
 		});
 
+        var player3 = new Tone.Player("./samples/Crackle_Loop_11.wav", function(){
+			loaded++;
+			sampleLoaded();
+		});
+
 		function sampleLoaded(e){
 			if (loaded ===4){
 				console.log("loaded sample: " + e);
@@ -30,7 +35,10 @@
 
 		//invoked when the queued sample is done loading
 		Tone.Buffer.onload = function(){
-			player1.start();
+            player3.start();
+            player1.loopStart = 180;
+            player2.loopStart = 180.0 + (32.0 * (1.0/94.5));
+			player1.start(0);
 			player1.output.gain.value = 3;
 			player2.start();
 			player2.output.gain.value = 3;
@@ -40,16 +48,27 @@
 		var fader = new Tone.CrossFade(0.5);
 		player1.connect(fader, 0, 0);
 		player2.connect(fader, 0, 1);
-		fader.toMaster();
+		//fader.toMaster();
 
+
+        player3.toMaster();
 		player1.loop = true;
 		player2.loop = true;
+        player3.loop = true;
 		player1.retrigger = true;
 		player2.retrigger = true;
+		player3.retrigger = true;
 
+        var bpfilter = new Tone.Filter(500, "bandpass", -12);
+        fader.connect(bpfilter);
+        bpfilter.toMaster();
+
+        var noise = new Tone.Noise();
+        noise.toMaster();
+		noise.volume.value = -50;
+        noise.start();
 
 		nx.onload = function(){
-
 			nx.colorize("#00CCFF"); // sets accent (default)
 			nx.colorize("border", "#222222");
 			nx.colorize("fill", "#222222");
