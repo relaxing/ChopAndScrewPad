@@ -36,8 +36,8 @@
 		//invoked when the queued sample is done loading
 		Tone.Buffer.onload = function(){
             player3.start();
-            player1.loopStart = 180;
-            player2.loopStart = 180.0 + (32.0 * (1.0/94.5));
+            player1.loopStart = 200;
+            player2.loopStart = 200.0 + (32.0 * (1.0/94.5));
 			player1.start(0);
 			player1.output.gain.value = 3;
 			player2.start();
@@ -60,7 +60,11 @@
 		player3.retrigger = true;
 
         var bpfilter = new Tone.Filter(500, "bandpass", -12);
+        var lpfilter = new Tone.Filter(300, "lowpass", -12);
+        
         fader.connect(bpfilter);
+        fader.connect(lpfilter);
+        lpfilter.toMaster();
         bpfilter.toMaster();
 
         var noise = new Tone.Noise();
