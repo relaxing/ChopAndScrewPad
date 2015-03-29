@@ -9,8 +9,8 @@
 
 		// SETUP TONE
 		// default playback rates
-		var player1Rate = 0.7;
-		var player2Rate = 0.7;
+		var player1Rate = 0.75;
+		var player2Rate = 0.75;
 
 		var player1 = new Tone.Player("./samples/screwTheAir.mp3", function(){
 			loaded++;
@@ -37,7 +37,7 @@
 		Tone.Buffer.onload = function(){
             player3.start();
             player1.loopStart = 200;
-            player2.loopStart = 200.0 + (32.0 * (1.0/94.5));
+            player2.loopStart = 200.0 + (64.0 * (1.0/94.5));
 			player1.start(0);
 			player1.output.gain.value = 3;
 			player2.start();
