@@ -74,7 +74,7 @@
 		nx.onload = function(){
 			nx.colorize("#7D26CD"); // sets accent (default)
 			nx.colorize("border", "#222222");
-			nx.colorize("fill", "#222222");
+			nx.colorize("fill", "#DDBBFF");
 
 			vinyl1.colors.accent = "#FF00CC";
 			vinyl1.draw();
