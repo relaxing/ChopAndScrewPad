@@ -50,7 +50,6 @@
 		player2.connect(fader, 0, 1);
 		//fader.toMaster();
 
-
         player3.toMaster();
 		player1.loop = true;
 		player2.loop = true;
