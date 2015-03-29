@@ -72,7 +72,7 @@
         noise.start();
 
 		nx.onload = function(){
-			nx.colorize("#00CCFF"); // sets accent (default)
+			nx.colorize("#7D26CD"); // sets accent (default)
 			nx.colorize("border", "#222222");
 			nx.colorize("fill", "#222222");
 
