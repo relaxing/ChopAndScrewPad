@@ -36,8 +36,8 @@
 		//invoked when the queued sample is done loading
 		Tone.Buffer.onload = function(){
             player3.start();
-            player1.loopStart = 200;
-            player2.loopStart = 200.0 + (64.0 * (1.0/94.5));
+            player1.loopStart = 192;
+            player2.loopStart = 192.0 + (64.0 * (1.0/94.5));
 			player1.start(0);
 			player1.output.gain.value = 3;
 			player2.start();
