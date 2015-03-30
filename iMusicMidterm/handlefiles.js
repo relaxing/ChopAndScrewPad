@@ -37,7 +37,7 @@ function setup() {
      console.log("LEAVING");
   });
 
-  dropZone1.drop(gotFile2, dropped);
+  dropZone2.drop(gotFile2, dropped);
 
 }
 
