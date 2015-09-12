@@ -36,16 +36,16 @@
 		//invoked when the queued sample is done loading
 		Tone.Buffer.onload = function(){
             player3.start();
-            player1.loopStart = 120;
-            player2.loopStart = 120.0 + (32.0 * (1.0/94.5));
+            player1.loopStart = 0;
+            player2.loopStart = 0 + (32.0 * (1.0/94.5));
 			player1.start(0);
-			player1.output.gain.value = 1;
+			player1.output.gain.value = 0;
 			player2.start();
-			player2.output.gain.value = 1;
+			player2.output.gain.value = 0;
 			console.log("everything is loaded");
 		};
 
-		var fader = new Tone.CrossFade(0.5);
+		var fader = new Tone.CrossFade(1.0);
 		player1.connect(fader, 0, 0);
 		player2.connect(fader, 0, 1);
 		//fader.toMaster();
