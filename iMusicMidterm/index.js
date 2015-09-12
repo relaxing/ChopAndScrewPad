@@ -12,17 +12,17 @@
 		var player1Rate = 0.75;
 		var player2Rate = 0.75;
 
-		var player1 = new Tone.Player("./samples/screwTheAir.mp3", function(){
+		var player1 = new Tone.Player("./samples/nuit.mp3", function(){
 			loaded++;
 			sampleLoaded();
 		});
 
-		var player2 = new Tone.Player("./samples/screwTheAir.mp3", function(){
+		var player2 = new Tone.Player("./samples/nuit.mp3", function(){
 			loaded++;
 			sampleLoaded();
 		});
 
-        var player3 = new Tone.Player("./samples/Crackle_Loop_11.wav", function(){
+        	var player3 = new Tone.Player("./samples/Crackle_Loop_11.wav", function(){
 			loaded++;
 			sampleLoaded();
 		});
@@ -39,9 +39,9 @@
             player1.loopStart = 120;
             player2.loopStart = 120.0 + (32.0 * (1.0/94.5));
 			player1.start(0);
-			player1.output.gain.value = 3;
+			player1.output.gain.value = 1;
 			player2.start();
-			player2.output.gain.value = 3;
+			player2.output.gain.value = 1;
 			console.log("everything is loaded");
 		};
 
