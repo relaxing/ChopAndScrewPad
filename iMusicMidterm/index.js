@@ -45,7 +45,7 @@
 			console.log("everything is loaded");
 		};
 
-		var fader = new Tone.CrossFade(1.0);
+		var fader = new Tone.CrossFade(1);
 		player1.connect(fader, 0, 0);
 		player2.connect(fader, 0, 1);
 		//fader.toMaster();
@@ -68,7 +68,7 @@
 
         var noise = new Tone.Noise();
         noise.toMaster();
-		noise.volume.value = -50;
+		noise.volume.value = -30;
         noise.start();
 
 		nx.onload = function(){
