@@ -36,8 +36,9 @@
 		//invoked when the queued sample is done loading
 		Tone.Buffer.onload = function(){
             player3.start();
+	    player3.output.gain.value = 1;
             player1.loopStart = 0;
-            player2.loopStart = 0 + (32.0 * (1.0/90.0));
+            player2.loopStart = 0 + (2.0 * (90.0/60.0));
 			player1.start(0);
 			player1.output.gain.value = 0;
 			player2.start();
@@ -51,12 +52,12 @@
 		//fader.toMaster();
 
         player3.toMaster();
-		player1.loop = true;
-		player2.loop = true;
+	player1.loop = true;
+	player2.loop = true;
         player3.loop = true;
-		player1.retrigger = true;
-		player2.retrigger = true;
-		player3.retrigger = true;
+	player1.retrigger = true;
+	player2.retrigger = true;
+	player3.retrigger = true;
 
         var bpfilter = new Tone.Filter(500, "bandpass", -12);
         var lpfilter = new Tone.Filter(300, "lowpass", -12);
@@ -68,7 +69,7 @@
 
         var noise = new Tone.Noise();
         noise.toMaster();
-		noise.volume.value = -30;
+	noise.volume.value = -40;
         noise.start();
 
 		nx.onload = function(){
