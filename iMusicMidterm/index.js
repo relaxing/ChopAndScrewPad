@@ -38,7 +38,7 @@
             player3.start();
 	    player3.output.gain.value = 1;
             player1.loopStart = 0;
-            player2.loopStart = 0 + (2.0 * (90.0/60.0));
+            player2.loopStart = 0 + (0.5 * (90.0/60.0));
 			player1.start(0);
 			player1.output.gain.value = 0;
 			player2.start();
