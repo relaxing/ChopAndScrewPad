@@ -14,31 +14,23 @@
 
 		var player1 = new Tone.Player("./samples/nuit.mp3", function(){
 			loaded++;
-			sampleLoaded();
 		});
 
 		var player2 = new Tone.Player("./samples/nuit.mp3", function(){
 			loaded++;
-			sampleLoaded();
 		});
 
         	var player3 = new Tone.Player("./samples/Crackle_Loop_11.wav", function(){
 			loaded++;
-			sampleLoaded();
 		});
 
-		function sampleLoaded(e){
-			if (loaded ===4){
-				console.log("loaded sample: " + e);
-			}
-		}
 
 		//invoked when the queued sample is done loading
 		Tone.Buffer.onload = function(){
             player3.start();
 	    player3.output.gain.value = 1;
             player1.loopStart = 0;
-            player2.loopStart = 0 + (0.5 * (90.0/60.0));
+            player2.loopStart = 0 + (0.25 * (90.0/60.0));
 			player1.start(0);
 			player1.output.gain.value = 0;
 			player2.start();
