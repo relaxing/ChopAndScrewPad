@@ -6,11 +6,13 @@ function setup() {
   noCanvas();
 
   fileSelect1 = createFileInput(gotFile1, 'multiple');
-  dropZone1 = createDiv('Drop files here for TT1');
+	fileSelect1.hide();
+  dropZone1 = createDiv('Drop file here for TT1');
   dropZone1.id('drop_zone1');
 
   fileSelect2 = createFileInput(gotFile2, 'multiple');
-  dropZone2 = createDiv('Drop files here for TT2');
+	fileSelect2.hide();
+  dropZone2 = createDiv('Drop file here for TT2');
   dropZone2.id('drop_zone2');
 
 
